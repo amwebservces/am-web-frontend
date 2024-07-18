@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+
+.menu-icon {
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 2.5rem !important;
+    color: rgb(17, 0, 92);
+}
+
+.menu-icon:hover {
+    color: rgba(17, 0, 92, 0.685);
+    background-color: rgba(102, 102, 102, 0.192);
+}
+
+.close-menu {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+
+.menu-item {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 1.5em;
+    padding: 0;
+}
+
+.menu-item-link {
+    padding: 0.5em 0;
+    color: rgb(0, 48, 102);
+    position: relative;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.transition-smoth {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+.menu-item-link:before,
+.menu-item-link:after {
+    position: absolute;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+
+.menu-item-link:before {
+    bottom: 0;
+    display: block;
+    height: 3px;
+    border-radius: 4px;
+    width: 0%;
+    content: "";
+    background-color: #023d64;
+}
+
+.menu-item-link:after {
+    left: 0;
+    top: 0;
+    padding: 0.3em 0;
+    position: absolute;
+    content: attr(data-hover);
+    color: #009dffd8;
+    white-space: nowrap;
+    max-width: 0%;
+    overflow: hidden;
+}
+
+.menu-item-link:hover:before,
+.current .menu-item-link:before {
+    opacity: 1;
+    width: 100%;
+}
+
+.menu-item-link:hover:after,
+.current .menu-item-link:after {
+    max-width: 100%;
+}
